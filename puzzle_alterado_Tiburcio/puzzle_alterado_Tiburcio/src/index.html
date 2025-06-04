@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Beja Romana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <button id="homeButton">Início</button>
+      <button class="puzzleNav" data-target="puzzle1">Templo Romano</button>
+      <button class="puzzleNav" data-target="puzzle2">Domus</button>
+      <button class="puzzleNav" data-target="puzzle3">Termas</button>
+    </nav>
+  </header>
+  <main>
+    <!-- Página Inicial -->
+    <section id="homeSection">
+      <h1>Beja Romana</h1>
+      <p>
+        Quem a Beja chegasse há dois mil anos sabia que chegava a Pax Iulia, cidade em momento de franco progresso. Mas o Império crescia e consolidava-se, e com isso Pax Iulia ganhava estatuto e importância no contexto peninsular. À cidade terá sido atribuído o estatuto de colónia, garantindo-lhe prestígio e uma importância excecional na província da Lusitânia e na Hispania Romana.
+      </p>
+      <p>
+        Pretende-se com esta designação descrever um período de relativa paz e estabilidade que surgiu dentro do Império Romano desde a ascensão de Augusto ao poder único até à morte do imperador Marco Aurélio em 180 d.C., já num contexto difícil de crescentes ameaças à estabilidade do império.
+      </p>
+            <p>
+        Do momento em que o império, nas palavras de um historiador romano, Dião Cássio, inicia a sua decadência de «um reino de ouro para um reino de ferro e ferrugem». Construída nos braços da guerra permanente, sustentada pela imposição de novos modos de vida, controlos burocráticos, intimidações militares, e outros recursos comuns a vários governos imperiais ao longo da história, o Império de Roma e a sua Pax Romana não deixaram de ter desafios.
+      </p>
+      <p>
+        Mas admite-se que pelo menos durante dois séculos, a hegemonia conquistada garantiu tempo e espaço para que se impusesse uma relativa pacificação política e uma certa homogeneidade de práticas culturais e sociais. Com a riqueza então gerada, e como ostentação do seu estatuto, Pax Iulia tornou-se uma cidade monumental.
+      </p>
+            <p>
+        Os vestígios arqueológicos encontrados ao longo do tempo e as importantes escavações das últimas duas décadas no centro da cidade atual, colocando a descoberto vestígios de um fórum romano cujo templo principal é o maior descoberto até hoje em território português, contribuem para consolidar a ideia de Pax Iulia como a mais importante cidade do sudoeste da Península Ibérica no período romano.
+      </p>
+      <div id="puzzleLinks">
+        <h2>Explora os Puzzles:</h2>
+        <ul>
+          <li><a href="#" class="puzzleLink" data-target="puzzle1">Templo Romano</a></li>
+          <li><a href="#" class="puzzleLink" data-target="puzzle2">Domus</a></li>
+          <li><a href="#" class="puzzleLink" data-target="puzzle3">Termas</a></li>
+        </ul>
+      </div>
+    </section>
+    
+    <div class="timer" style="font-size:20px; margin:10px 0;"></div>
+    
+    <div class="info-text" style="display:none; font-size:16px; line-height:1.4;"></div>
+
+
+    <!-- Seções dos Puzzles -->
+    <section id="puzzle1" class="puzzleSection" style="display:none;">
+      <h2>Templo Romano</h2>
+      <div class="puzzle-container">
+        <div class="puzzle-grid" id="puzzleGrid1"></div>
+      </div>
+    </section>
+
+    <section id="puzzle2" class="puzzleSection" style="display:none;">
+      <h2>Domus</h2>
+      <div class="puzzle-container">
+        <div class="puzzle-grid" id="puzzleGrid2"></div>
+      </div>
+    </section>
+
+    <section id="puzzle3" class="puzzleSection" style="display:none;">
+      <h2>Termas</h2>
+      <div class="puzzle-container">
+        <div class="puzzle-grid" id="puzzleGrid3"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Beja Romana</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

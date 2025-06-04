@@ -1,0 +1,219 @@
+:root {
+  --terra-cotta: #E0B083;
+  --roman-red: #7B3F00;
+  --stone-gray: #A89F91;
+  --marble-white: #FDF6EC;
+  --bronze-brown: #5A3E36;
+}
+
+body {
+  background-color: var(--marble-white);
+  color: var(--bronze-brown);
+  font-family: 'Garamond', serif;
+  text-align: justify;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: var(--terra-cotta);
+  padding: 1rem;
+  text-align: center;
+}
+
+nav button {
+  background: none;
+  border: none;
+  padding: 1em;
+  margin: 0 1em;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--bronze-brown);
+}
+
+h1, h2 {
+  color: var(--roman-red);
+  text-align: center;
+}
+
+main {
+  padding: 2em;
+}
+
+p {
+  max-width: 800px;
+  margin: 1rem auto;
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+#puzzleLinks {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+#puzzleLinks ul {
+  list-style: none;
+  padding: 0;
+}
+
+#puzzleLinks li {
+  margin: 0.5rem;
+}
+
+#puzzleLinks a {
+  color: var(--roman-red);
+  text-decoration: none;
+}
+
+.puzzle-container {
+  max-width: 500px;
+  margin: 2em auto;
+}
+
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  position: relative;
+}
+
+.puzzle-piece {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1; /* Garante que as peças sejam quadradas */
+  border: 2px solid var(--stone-gray);
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+/* Quando uma peça está selecionada para trocar */
+.puzzle-piece.selected {
+  outline: 2px dashed #3498db;
+  z-index: 2;
+}
+
+/* Quando uma peça está na posição correta */
+.puzzle-piece.in-place {
+  box-shadow: 0 0 10px 3px #2ecc71;
+  border: 2px solid #27ae60;
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+/* Efeito de hover na peça */
+.puzzle-piece:hover {
+  transform: scale(1.05); /* Leve aumento quando passar o mouse sobre a peça */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/* Quando a peça está na posição correta (classe in-place) */
+.puzzle-piece.in-place {
+  border: 2px solid green; /* Bordas verdes quando a peça está no lugar certo */
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3); /* Efeito de sombra suave verde */
+}
+
+.puzzle-piece:hover {
+  transform: scale(1.05); /* Leve aumento quando passar o mouse sobre a peça */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+footer {
+  text-align: center;
+  background-color: var(--terra-cotta);
+  padding: 1em;
+  margin-top: 2em;
+}
+
+.timer {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.info-text {
+  width: calc(100% - 4rem); /* ou 90vw */
+  max-width: none;
+  font-size: 18px;
+  line-height: 1.6;
+  padding: 2rem;
+  background-color: #FDF6EC;
+  border-radius: 15px;
+  font-family: 'Garamond', serif;
+  text-align: justify;
+  text-justify: inter-word;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  color: #444;
+  letter-spacing: 0.3px;
+  display: block;
+}
+
+main section {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* -------------- Efeito do puzzle desaparecer e o texto aparecer ---------------*/
+.fade {
+  opacity: 0;
+  transition: opacity 0.7s;
+  pointer-events: none;
+}
+.fade.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --- PuzzleNav com linha animada --- */
+.puzzleNav {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 1em 1.5em;
+  margin: 0 1em;
+  font-size: 1.1em;
+  font-family: inherit;
+  color: var(--roman-red);
+  cursor: pointer;
+  outline: none;
+  transition: color 0.3s;
+  z-index: 1;
+}
+
+.puzzleNav::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  bottom: 0.4em;
+  height: 3px;
+  background: var(--roman-red);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+  z-index: 2;
+}
+
+.puzzleNav.active,
+.puzzleNav:focus {
+  color: var(--bronze-brown);
+}
+
+.puzzleNav.active::after,
+.puzzleNav:focus::after {
+  transform: scaleX(1);
+}
+
+.puzzleNav:hover:not(.active) {
+  color: var(--terra-cotta);
+}
